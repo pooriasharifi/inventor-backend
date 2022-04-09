@@ -7,8 +7,8 @@ from flask_mongoengine import MongoEngine
 from Routs.user import user
 from Routs.kala import kala
 from Routs.request import requ
-
-
+from Routs.all import all
+from Routs.code import code
 
 
 app = Flask(__name__)
@@ -24,7 +24,8 @@ db = MongoEngine(app)
 app.register_blueprint(user)
 app.register_blueprint(kala)
 app.register_blueprint(requ)
-
+app.register_blueprint(all)
+app.register_blueprint(code)
 
 jwt = JWTManager(app)
 app.config["JWT_SECRET_KEY"] = "@PZ-#22"

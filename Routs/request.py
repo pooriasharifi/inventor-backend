@@ -43,7 +43,7 @@ def add_req(user_id):
                 user.save()
                 return make_response(res_str('registered',None),200)
         except OSError as err:
-            make_response(res_str('internal_server_error',err),500)
+            return make_response(res_str('internal_server_error',err),500)
     elif request.method=='GET':
         try:
             user=Users.objects(user_id=user_id).first()
